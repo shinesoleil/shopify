@@ -4,7 +4,7 @@
 
 [TOC]
 
-# Set-Up
+# Set-Up (35 min)
 
 ## 1. Eureka Server (15 min)
 
@@ -17,6 +17,13 @@
 ## 1. Api (60 min)
 
 #### store (30 min)
+
+```java
+Class Store {
+	String id;
+	String name;
+}
+```
 
 POST
 
@@ -36,6 +43,14 @@ Delete
 
 #### product (30 min)
 
+```java
+Class Product {
+    String id;
+	String storeId;
+	String name;
+}
+```
+
 POST
 
 /stores/{sid}/products
@@ -51,6 +66,14 @@ GET
 Delete
 
 /stores/{sid}/products/{pid}
+
+GET
+
+/products
+
+GET
+
+/product/{pid}
 
 ## 2. Dockerfile & Docker-Compose (15 min)
 
@@ -77,6 +100,14 @@ Delete
 ## 1. Api (30 min)
 
 #### product price
+
+```java
+ProductPrice {
+    String id;
+    String productId;
+    double amount;
+}
+```
 
 POST
 
