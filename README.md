@@ -1,6 +1,8 @@
-![Model](/Users/shinesoleil/Code/training/shopify/model.jpeg)
+![Model](https://raw.githubusercontent.com/shinesoleil/shopify/master/model.jpeg)
 
 
+
+[TOC]
 
 # Set-Up
 
