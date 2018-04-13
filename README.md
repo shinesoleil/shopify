@@ -1,4 +1,156 @@
+![Model](/Users/shinesoleil/Code/training/shopify/model.jpeg)
+
+
+
+# Set-Up
+
+## 1. Eureka Server (15 min)
+
+## 2. Reverse Proxy (Nginx or Traefik) (20 min) 
+
+
+
+# Store
+
+## 1. Api (60 min)
+
+#### store (30 min)
+
+POST
+
+/stores
+
+GET
+
+/stores
+
+GET
+
+/stores/{sid}
+
+Delete
+
+/stores/{sid}
+
+#### product (30 min)
+
+POST
+
+/stores/{sid}/products
+
+GET
+
+/stores/{sid}/products
+
+GET
+
+/stores/{sid}/products/{pid}
+
+Delete
+
+/stores/{sid}/products/{pid}
+
+## 2. Dockerfile & Docker-Compose (15 min)
+
+## 3. Eureka Registering (5 min) 
+
+## 4. Front-End Components 
+
+#### &lt;ProductList/&gt;
+
+#### &lt;ProductInfo/&gt;
+
+#### &lt;StoreCreation/&gt;
+
+#### &lt;StoreDeletion/&gt;
+
+#### &lt;ProductCreation/&gt;
+
+#### &lt;ProductDeletion/&gt;
+
+
+
+# Product price
+
+## 1. Api (30 min)
+
+#### product price
+
+POST
+
+/product-prices
+
+GET
+
+/product-prices?product-id
+
+## 2. Dockerfile & Docker-Compose (15 min)
+
+## 3. Eureka Registering (5 min)
+
+## 4. Front-End Components 
+
+#### &lt;ProductPriceList/&gt;
+
+#### &lt;ProductPriceInfo/&gt;
+
+#### &lt;ProductPriceCreation/&gt;
+
+
+
+# Inventory
+
+## 1. Api (60 min)
+
+#### inventory (30 min)
+
+POST
+
+/inventories
+
+GET
+
+/inventories
+
+GET
+
+/inventories/{iid}
+
+#### unloading request (30 min)
+
+POST
+
+/unloading-requests
+
+GET
+
+/unloading-requests
+
+GET
+
+/unloading-requests/{urid}
+
+## 2. Dockerfile & Docker-Compose (15 min)
+
+## 3. Eureka Registering (5 min)
+
+## 4. Front-End Components 
+
+#### &lt;InventoryList/&gt;
+
+#### &lt;InventoryItemInfo/&gt;
+
+#### &lt;UnloadRequestInfo/&gt;
+
+#### &lt;UnloadRequestCreation/&gt;
+
+
+
+
+
 # Order
+
+## 1. Api (150 min)
 
 #### order
 
@@ -58,77 +210,29 @@ GET
 
 /orders/{oid}/logistic-order/confirmation
 
-# Store
+## 2. Dockerfile & Docker-Compose (15 min)
 
-#### store
+## 3. Eureka Registering (5 min)
 
-POST
+## 4. Front-End Components 
 
-/stores
+#### &lt;OrderList/&gt;
 
-GET
+#### &lt;OrderItemInfo/&gt;
 
-/stores
+#### &lt;OrderItemCreation/&gt;
 
-GET
+#### &lt;PaymentInfo&gt;
 
-/stores/{sid}
-
-####  product
-
-POST
-
-/stores/{sid}/products
-
-GET
-
-/stores/{sid}/products
-
-GET
-
-/stores/{sid}/products/{pid}
-
-# Product price
-
-POST
-
-/product-prices
-
-GET
-
-/product-prices?product-id
-
-# Inventory
-
-POST
-
-/inventories
-
-GET
-
-/inventories
-
-GET
-
-/inventories/{iid}
-
-POST
-
-/unloading-requests
-
-GET
-
-/unloading-requests
-
-GET
-
-/unloading-requests/{urid}
+#### &lt;PaymentCreation/&gt;
 
 
 
 # Return 
 
-#### return order
+## 1. Api (120 min)
+
+#### return order 
 
 POST
 
@@ -176,11 +280,27 @@ GET
 
 /return-orders/{roid}/refund
 
+## 2. Dockerfile & Docker-Compose (15 min)
+
+## 3. Eureka Registering (5 min)
+
+## 4. Front-End Components 
+
+#### &lt;ReturnOrderList/&gt;
+
+#### &lt;ReturnOrderInfo/&gt;
+
+#### &lt;ReturnOrderCreation/&gt;
+
+#### &lt;ReturnOrderItemInfo/&gt;
+
 
 
 # Cart
 
-#### cart
+## 1. Api (60 min)
+
+#### cart (30 min)
 
 POST
 
@@ -190,7 +310,7 @@ GET
 
 /cart
 
-#### cart item
+#### cart item (30 min)
 
 POST
 
@@ -204,7 +324,27 @@ GET
 
 /cart/cart-items/{ciid}
 
+## 2. Dockerfile & Docker-Compose (15 min)
+
+## 3. Eureka Registering (5 min)
+
+## 4. Front-End Components 
+
+#### &lt;Cart/&gt;
+
+#### &lt;CartItemInfo/&gt;
+
+#### &lt;AddToCart/&gt;
+
+#### &lt;RemoveFromCart/&gt;
+
+
+
 # user
+
+## 1. Api (30 min)
+
+#### user
 
 POST
 
@@ -217,4 +357,20 @@ GET
 GET
 
 /users/{uid}
+
+## 2. Dockerfile & Docker-Compose (15 min)
+
+## 3. Eureka Registering (5 min)
+
+## 4. Front-End Components 
+
+#### &lt;UserList/&gt;
+
+#### &lt;UserInfo/&gt;
+
+#### &lt;UserCreation/&gt;
+
+#### &lt;UserDeletion/&gt;
+
+
 
