@@ -28,9 +28,9 @@ Class Store {
 
 ```mysql
 CREATE TABLE stores(
-	id varchar(100) NOT NULL,
+	id varchar(200) NOT NULL,
 	name varchar(100) NOT NULL,
-	PRIMARY KEY (id),
+	PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ```
 
@@ -63,8 +63,8 @@ Class Product {
 
 ```mysql
 CREATE TABLE products(
-	id varchar(100) NOT NULL,
-	store_id varchar(100) NOT NULL,
+	id varchar(200) NOT NULL,
+	store_id varchar(200) NOT NULL,
 	name varchar(100) NOT NULL,
 	PRIMARY KEY (id),
 	FOREIGN KEY(store_id) REFERENCES stores(id)
