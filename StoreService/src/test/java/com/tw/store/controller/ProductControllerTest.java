@@ -133,7 +133,7 @@ public class ProductControllerTest {
         when(storeRepository.findById(any())).thenReturn(Optional.of(store));
         when(productRepository.findById(any())).thenReturn(Optional.of(product));
 
-        mockMvc.perform(get("/stores/" + storeId + "/products/" + productId))
+        mockMvc.perform(get("/products/" + productId))
                 .andExpect(status().isOk())
                 .andExpect(content().json("{id: " + productId.toString() + ", name: " + productName + ", storeId:" + storeId + "}"));
     }

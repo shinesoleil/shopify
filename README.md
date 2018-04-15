@@ -79,9 +79,9 @@ GET
 
 /stores/{sid}/products
 
-GET
+~~GET~~
 
-/stores/{sid}/products/{pid}
+~~/stores/{sid}/products/{pid}~~
 
 Delete
 

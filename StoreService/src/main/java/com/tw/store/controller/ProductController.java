@@ -23,7 +23,6 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 @Controller
-@RequestMapping("/stores/{sid}/products")
 public class ProductController {
     @Autowired
     StoreRepository storeRepository;
@@ -32,7 +31,8 @@ public class ProductController {
     ProductRepository productRepository;
 
     @ResponseBody
-    @RequestMapping(method = POST, consumes = "application/json")
+    @RequestMapping(method = POST, path = "/stores/{sid}/products", consumes = "application/json")
+
     public ResponseEntity<?> createStore(@PathVariable String sid,
                                          @RequestBody Product product) {
 
@@ -43,7 +43,7 @@ public class ProductController {
         });
 
         product.setStoreId(sid);
-        Product result =  productRepository.save(product);
+        Product result = productRepository.save(product);
 
         URI location = ServletUriComponentsBuilder
                 .fromCurrentRequest().path("/{id}")
@@ -53,7 +53,7 @@ public class ProductController {
     }
 
     @ResponseBody
-    @RequestMapping(method = GET, produces = "application/json")
+    @RequestMapping(method = GET, path = "/stores/{sid}/products", produces = "application/json")
     public List<Product> readAllStores(@PathVariable String sid) {
 //        Optional<Store> storeOptional = storeRepository.findById(sid);
 //
@@ -65,7 +65,7 @@ public class ProductController {
     }
 
     @ResponseBody
-    @RequestMapping(method = GET, path = "/{pid}", produces = "application/json")
+    @RequestMapping(method = GET, path = "/products/{pid}", produces = "application/json")
     public Product readProductById(@PathVariable("pid") String pid) {
         return productRepository.findById(pid).orElseGet(() -> {
             throw new NotFoundException();
