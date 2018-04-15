@@ -1,0 +1,17 @@
+# Use root/example as user/password credentials
+version: '3.1'
+
+services:
+  spring:
+    image: springio/config-server
+    container_name: config-server
+    restart: always
+    ports:
+      - 7777:7777
+    networks:
+      - default
+
+networks:
+  default:
+    external:
+      name: my-net

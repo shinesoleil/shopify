@@ -5,3 +5,6 @@ StoreService/target
 
 PriceService/.idea
 PriceService/target
+
+ConfigServer/.idea
+ConfigServer/target
