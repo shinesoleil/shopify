@@ -15,7 +15,6 @@
 ./mvnw install dockerfile:build
 ```
 
-
 **5. Run application with docker-compose**
 ```bash
 docker-compose up

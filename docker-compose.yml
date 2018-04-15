@@ -1,9 +1,29 @@
-version: '3.1'
+version: '3.5'
 
 services:
-  db:
+  eureka:
     image: springcloud/eureka
     container_name: eureka-server
     restart: always
     ports:
       - 8761:8761
+    networks:
+      - my-net
+
+  traefik:
+    image: traefik
+    container_name: traefik-proxy
+    restart: always
+    ports:
+      - 9000:8080
+      - 80:80
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - $PWD/traefik.toml:/etc/traefik/traefik.toml
+    networks:
+      - my-net
+
+networks:
+  my-net:
+    name: my-net
+    driver: bridge
