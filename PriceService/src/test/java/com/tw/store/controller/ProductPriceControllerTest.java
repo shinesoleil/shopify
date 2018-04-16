@@ -67,31 +67,31 @@ public class ProductPriceControllerTest {
                 .andExpect(status().isCreated())
                 .andExpect(redirectedUrlPattern("http://*/products/*/product-prices/*"));
     }
-
-    @Test
-    public void should_not_create_product_price_when_no_product_found() throws Exception {
-        String productId = UUID.randomUUID().toString();
-        String productPriceId = UUID.randomUUID().toString();
-
-        double unitPrice = 2000;
-        String productName = "phone";
-        ProductPrice productPriceForJson = new ProductPrice();
-        productPriceForJson.setUnitPrice(unitPrice);
-        String json = new ObjectMapper().writeValueAsString(productPriceForJson);
-
-        ProductPrice productPrice = new ProductPrice();
-        productPrice.setId(productPriceId);
-        productPrice.setProductId(productId);
-        productPrice.setProductName(productName);
-        productPriceForJson.setUnitPrice(unitPrice);
-
-        when(productPriceRepository.save(any())).thenReturn(productPriceForJson);
-
-        mockMvc.perform(post("/products/" + productId +"/product-prices")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(json))
-                .andExpect(status().isNotFound());
-    }
+//
+//    @Test
+//    public void should_not_create_product_price_when_no_product_found() throws Exception {
+//        String productId = UUID.randomUUID().toString();
+//        String productPriceId = UUID.randomUUID().toString();
+//
+//        double unitPrice = 2000;
+//        String productName = "phone";
+//        ProductPrice productPriceForJson = new ProductPrice();
+//        productPriceForJson.setUnitPrice(unitPrice);
+//        String json = new ObjectMapper().writeValueAsString(productPriceForJson);
+//
+//        ProductPrice productPrice = new ProductPrice();
+//        productPrice.setId(productPriceId);
+//        productPrice.setProductId(productId);
+//        productPrice.setProductName(productName);
+//        productPriceForJson.setUnitPrice(unitPrice);
+//
+//        when(productPriceRepository.save(any())).thenReturn(productPriceForJson);
+//
+//        mockMvc.perform(post("/products/" + productId +"/product-prices")
+//                .contentType(MediaType.APPLICATION_JSON)
+//                .content(json))
+//                .andExpect(status().isNotFound());
+//    }
 //
 //    @Test
 //    public void shouldReturnEmptyList() throws Exception {

@@ -1,0 +1,21 @@
+
+defaultEntryPoints = ["http"]
+[entryPoints]
+    [entryPoints.http]
+    address = ":80"
+
+[web]
+address = ":8080"
+
+[docker]
+
+endpoint = "unix://var/run/docker.sock"
+domain = "docker.localhost"
+watch = true
+exposedbydefault = true
+usebindportip = true
+swarmmode = false
+#
+# [eureka]
+# endpoint = "http://eureka-server:8761/eureka"
+# delay = "1m"

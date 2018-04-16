@@ -10,7 +10,13 @@
 
 ## 2. Reverse Proxy (Nginx or Traefik) (20 min) 
 
+``` bash
+docker-compose up -d // start eureka-server & traefik-proxy
+```
 
+## 3. Config Server
+
+Config-Server project at [github-config-server](https://github.com/shinesoleil/cloud-config)
 
 # Store
 

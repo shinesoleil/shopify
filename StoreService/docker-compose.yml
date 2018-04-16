@@ -10,7 +10,8 @@ services:
       - 8888:8080
     depends_on:
       - db
-
+    networks:
+      - default
   db:
     image: mysql
     container_name: store_mysql
@@ -20,3 +21,8 @@ services:
       MYSQL_DATABASE: scaffold
       MYSQL_USER: mysql
       MYSQL_PASSWORD: mysql
+
+networks:
+  default:
+    external:
+      name: my-net

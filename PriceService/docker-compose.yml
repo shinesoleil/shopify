@@ -4,19 +4,25 @@ version: '3.1'
 services:
   spring:
     image: springio/store-service
-    container_name: store_app
+    container_name: price_app
     restart: always
     ports:
-      - 8888:8080
+      - 8889:8080
     depends_on:
       - db
-
+    networks:
+      - default
   db:
     image: mysql
-    container_name: store_mysql
+    container_name: price_mysql
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: example
       MYSQL_DATABASE: scaffold
       MYSQL_USER: mysql
       MYSQL_PASSWORD: mysql
+
+networks:
+  default:
+    external:
+      name: my-net
