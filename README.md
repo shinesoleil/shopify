@@ -6,21 +6,21 @@
 
 # Set-Up (35 min)
 
-## 1. Eureka Server (15 min)
+## 1. Eureka Server (15 min) - Done
 
-## 2. Reverse Proxy (Nginx or Traefik) (20 min) 
+## 2. Reverse Proxy (Traefik) (20 min) - Done 
 
-``` bash
-docker-compose up -d // start eureka-server & traefik-proxy
-```
+Both Eureka Server and Traefik Proxy could be launched by docker-compose in directory EurekaServer
 
-## 3. Config Server
+## 3. Config Server - Done
 
-Config-Server project at [github-config-server](https://github.com/shinesoleil/cloud-config)
+Config Server could be launched by docker-compose in directory ConfigServer
+
+Config Files are stored at [github-config-server](https://github.com/shinesoleil/cloud-config)
 
 # Store
 
-## 1. Api (60 min)
+## 1. Api (60 min) - Done
 
 #### store (30 min)
 
@@ -101,9 +101,9 @@ GET
 
 /product/{pid}
 
-## 2. Dockerfile & Docker-Compose (15 min)
+## 2. Dockerfile & Docker-Compose (15 min) - Done
 
-## 3. Eureka Registering (5 min) 
+## 3. Eureka Registering (5 min) - Done 
 
 ## 4. Front-End Components 
 
@@ -123,7 +123,7 @@ GET
 
 # Product price
 
-## 1. Api (30 min)
+## 1. Api (30 min) - Done
 
 #### product price
 
@@ -162,9 +162,9 @@ GET
 
 /products-prices/{ppid}
 
-## 2. Dockerfile & Docker-Compose (15 min)
+## 2. Dockerfile & Docker-Compose (15 min) - Done
 
-## 3. Eureka Registering (5 min)
+## 3. Eureka Registering (5 min) - Done
 
 ## 4. Front-End Components 
 
