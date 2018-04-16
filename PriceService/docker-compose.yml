@@ -3,7 +3,7 @@ version: '3.1'
 
 services:
   spring:
-    image: springio/store-service
+    image: springio/price-service
     container_name: price_app
     restart: always
     ports:
@@ -18,7 +18,7 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: example
-      MYSQL_DATABASE: scaffold
+      MYSQL_DATABASE: price
       MYSQL_USER: mysql
       MYSQL_PASSWORD: mysql
 
