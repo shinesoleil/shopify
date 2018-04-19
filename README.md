@@ -93,9 +93,9 @@ Delete
 
 /stores/{sid}/products/{pid}
 
-GET
+~~GET~~
 
-/products
+~~/products~~
 
 GET
 
@@ -148,11 +148,11 @@ CREATE TABLE product_prices(
 
 POST
 
-/products/{pid}/product-prices
+/products/{pid}/prices
 
 GET
 
-/products/{pid}/products-prices
+/products/{pid}/prices
 
 GET
 
@@ -160,7 +160,7 @@ GET
 
 GET
 
-/products-prices/{ppid}
+/products/{pid}/current-price
 
 ## 2. Dockerfile & Docker-Compose (15 min) - Done
 
