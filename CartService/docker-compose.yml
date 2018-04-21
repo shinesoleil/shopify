@@ -7,7 +7,7 @@ services:
     container_name: cart_app
     restart: always
     ports:
-      - 8889:8080
+      - 8890:8080
     depends_on:
       - db
     networks:

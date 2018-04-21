@@ -11,6 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "cart_items")
@@ -20,11 +21,13 @@ public class CartItem {
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
     String id;
+//
+//    @ManyToOne
+//    Cart cart;
 
-    @ManyToOne
-    Cart cart;
-
+    @NotNull
     String productId;
+    @NotNull
     int quantity;
 
     public String getId() {
@@ -35,13 +38,13 @@ public class CartItem {
         this.id = id;
     }
 
-    public Cart getCart() {
-        return cart;
-    }
-
-    public void setCart(Cart cart) {
-        this.cart = cart;
-    }
+//    public Cart getCart() {
+//        return cart;
+//    }
+//
+//    public void setCart(Cart cart) {
+//        this.cart = cart;
+//    }
 
     public String getProductId() {
         return productId;

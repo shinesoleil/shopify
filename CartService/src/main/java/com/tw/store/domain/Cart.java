@@ -21,9 +21,9 @@ public class Cart {
     private String id;
 
     private String owner;
-
-    @OneToMany(mappedBy = "cart")
-    List<CartItem> cartItems;
+//
+//    @OneToMany(mappedBy = "cart")
+//    List<CartItem> cartItems;
 
     public String getId() {
         return id;
@@ -41,11 +41,4 @@ public class Cart {
         this.owner = owner;
     }
 
-    public List<CartItem> getCartItems() {
-        return cartItems;
-    }
-
-    public void setCartItems(List<CartItem> cartItems) {
-        this.cartItems = cartItems;
-    }
 }

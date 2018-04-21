@@ -17,7 +17,7 @@ class StoreInfo extends Component {
 	}
 
 	componentDidMount() {
-		axios.get("http://spring.storeservice.docker.localhost/stores/" + this.props.match.params.storeId)
+		axios.get("http://localhost:1337/spring.storeservice.docker.localhost/stores/" + this.props.match.params.storeId)
 			.then(res => {
 				this.setState({ store: res.data });
 			});

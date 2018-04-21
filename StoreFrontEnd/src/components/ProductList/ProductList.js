@@ -17,7 +17,7 @@ class ProductList extends Component {
 	}
 
 	componentDidMount() {
-		axios.get("http://spring.storeservice.docker.localhost/stores/" + this.props.storeId + "/products")
+		axios.get("http://localhost:1337/spring.storeservice.docker.localhost/stores/" + this.props.storeId + "/products")
 			.then(res => {
 				this.setState({ products: res.data });
 			});

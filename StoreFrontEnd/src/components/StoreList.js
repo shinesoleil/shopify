@@ -16,7 +16,7 @@ class StoreList extends Component {
 	}
 
 	componentDidMount() {
-		axios.get("http://spring.storeservice.docker.localhost/stores")
+		axios.get("http://localhost:1337/spring.storeservice.docker.localhost/stores")
 			.then(res => {
 				this.setState({ stores: res.data });
 			});

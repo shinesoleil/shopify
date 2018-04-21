@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 // import PropTypes from 'prop-types';
-import { Form, FormGroup, FormControl, Button, ControlLabel, Col } from 'react-bootstrap';
+import { Form, FormGroup, FormControl, Button, ControlLabel } from 'react-bootstrap';
 import './StoreCreation.css';
 
-import { upperCase } from 'lodash';
 import axios from 'axios';
 
 class StoreCreation extends Component {
@@ -12,7 +11,7 @@ class StoreCreation extends Component {
 		console.log('提交表单...');
 		console.log(this.name.value)
 
-		axios.post('http://spring.storeservice.docker.localhost/stores', {
+		axios.post('http://localhost:1337/spring.storeservice.docker.localhost/stores', {
 			name: this.name.value,
 		})
 			.then(res => {

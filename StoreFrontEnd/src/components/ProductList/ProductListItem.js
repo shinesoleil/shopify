@@ -18,7 +18,7 @@ class ProductListItem extends Component {
 	}
 
 	componentDidMount() {
-		axios.get('http://spring.priceservicejersey.docker.localhost/products/' + this.props.product.id + '/current-price')
+		axios.get('http://localhost:1337/spring.priceservicejersey.docker.localhost/products/' + this.props.product.id + '/current-price')
 			.then(res => {
 				console.log("houhou")
 					this.setState({ price: res.data });
