@@ -1,11 +1,35 @@
 import React, { Component } from 'react';
 import './StoreList.css';
 
+import StoreListItem from "./StoreListItem";
+
+import axios from 'axios';
+import { map } from 'lodash';
+
 class StoreList extends Component {
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			stores: []
+		};
+	}
+
+	componentDidMount() {
+		axios.get("http://spring.storeservice.docker.localhost/stores")
+			.then(res => {
+				this.setState({ stores: res.data });
+			});
+	}
+
 	render() {
 		return (
-			<div className="App">
-				<div>name</div>
+			<div className="store-list">
+				{
+					map(this.state.stores, (store) => (
+						<StoreListItem store={store} key={store.id}/>
+					))
+				}
 			</div>
 		);
 	}

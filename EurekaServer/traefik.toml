@@ -19,3 +19,15 @@ swarmmode = false
 # [eureka]
 # endpoint = "http://eureka-server:8761/eureka"
 # delay = "1m"
+
+[file]
+[backends]
+  [backends.backend1]
+    [backends.backend1.servers]
+      [backends.backend1.servers.server0]
+        url = "http://localhost:3000"
+[frontends]
+   [frontends.frontend1]
+   backend = "backend1"
+     [frontends.frontend1.routes.test_1]
+     rule = "Host:ui.localhost"

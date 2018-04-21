@@ -498,6 +498,22 @@ GET
 
 # Cart
 
+```java
+Class Cart {
+	String id;
+	String owner;
+	List<CartItem> cartItems;
+}
+```
+
+```mysql
+CREATE TABLE carts(
+	id varchar(200) NOT NULL,
+	owner varchar(100) NOT NULL,
+	PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+```
+
 ## 1. Api (60 min)
 
 #### cart (30 min)
@@ -511,6 +527,30 @@ GET
 /cart
 
 #### cart item (30 min)
+
+```java
+class CartItem {
+    String id;
+	String cartId;
+    String productId;
+    int quantity;
+}
+```
+
+
+
+```mysql
+CREATE TABLE cart_items(
+  id varchar(200) NOT NULL,
+  cart_id varchar(200) NOT NULL,
+  product_id varchar(200) NOT NULL,
+  quantity integer NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY(cart_id) REFERENCES carts(id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+```
+
+
 
 POST
 
