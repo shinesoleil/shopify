@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
 import { Form, FormGroup, FormControl, Button, ControlLabel } from 'react-bootstrap';
 import './StoreCreation.css';
 
@@ -8,20 +7,19 @@ import axios from 'axios';
 class StoreCreation extends Component {
 	handleSumbit(event) {
 		event.preventDefault();
-		console.log('提交表单...');
-		console.log(this.name.value)
 
 		axios.post('http://localhost:1337/spring.storeservice.docker.localhost/stores', {
 			name: this.name.value,
 		})
 			.then(res => {
-				console.log("suc")
-				console.log(res)
+				console.log("suc");
+				alert('creation success');
 			}, error => {
 				console.log("err")
-				console.log(error)
+				alert('creation error');
 			});
 	}
+
 
 	render() {
 		return (

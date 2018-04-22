@@ -3,9 +3,10 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-import StoreList from './components/StoreList';
-import StoreInfo from './components/StoreInfo/StoreInfo';
-import StoreCreation from './components/StoreCreation/StoreCreation';
+import StoreList from './StoreServiceComponents/StoreList';
+import StoreInfo from './StoreServiceComponents/StoreInfo/StoreInfo';
+import StoreCreation from './StoreServiceComponents/StoreCreation/StoreCreation';
+import CartItemList from './CartServiceComponent/CartList/CartItemList';
 
 class App extends Component {
 	render() {
@@ -14,16 +15,17 @@ class App extends Component {
 				<Router>
 					<div>
 						<header className="App-header">
-							<h1 className="App-title">Welcome to React</h1>
+							<h1 className="App-title">Welcome</h1>
 							<span className="App-link"><Link to="/">Home</Link></span>
 							<span className="App-link"><Link to="/stores">Stores</Link></span>
-							<span className="App-link"><Link to="/new-store">Create Stores</Link></span>
+							<span className="App-link"><Link to="/cart">Cart</Link></span>
 							{/*<span className="App-link"><Link to="/topics">Topics</Link></span>*/}
 						</header>
 
 						<Route exact path="/stores" component={StoreList}/>
 						<Route path="/new-store" component={StoreCreation}/>
 						<Route path="/stores/:storeId" component={StoreInfo}/>
+						<Route path="/cart" component={CartItemList}/>
 						{/*<Route path="/topics" component={StoreList}/>*/}
 					</div>
 				</Router>

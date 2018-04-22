@@ -5,6 +5,7 @@ import './ProductListItem.css';
 
 import axios from 'axios';
 import { upperCase } from 'lodash';
+import AddToCart from '../../CartServiceComponent/AddToCart/AddToCart';
 
 class ProductListItem extends Component {
 	constructor(props) {
@@ -20,11 +21,9 @@ class ProductListItem extends Component {
 	componentDidMount() {
 		axios.get('http://localhost:1337/spring.priceservicejersey.docker.localhost/products/' + this.props.product.id + '/current-price')
 			.then(res => {
-				console.log("houhou")
 					this.setState({ price: res.data });
 				},
 				error => {
-					console.log("haha");
 					console.log(error);
 				});
 	}
@@ -39,7 +38,9 @@ class ProductListItem extends Component {
 					{/*</Link>*/}
 				</div>
 				<div className="product-price">price: {this.state.price.unitPrice}</div>
+				<AddToCart productId={this.props.product.id}/>
 				<div className="product-id">id: {this.props.product.id}</div>
+
 			</div>
 		);
 	}

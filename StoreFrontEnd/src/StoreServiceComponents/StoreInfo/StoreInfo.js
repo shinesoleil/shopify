@@ -27,7 +27,7 @@ class StoreInfo extends Component {
 		return (
 			<div className="store-info">
 				<div className="store-info-name">{upperCase(this.state.store.name)}</div>
-				<div className="store-info-id">{this.state.store.id}</div>
+				<div className="store-info-id">id: {this.state.store.id}</div>
 
 				<ProductList storeId={this.props.match.params.storeId}/>
 			</div>

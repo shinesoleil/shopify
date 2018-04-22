@@ -1,0 +1,28 @@
+.cart-item {
+    display: inline-block;
+    height: 200px;
+    width: 32%;
+    border: solid 1px #e9ebf2;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.cart-item-product-name {
+    color: #000000;
+    font-size: 26px;
+    margin-top: 20px;
+}
+
+.cart-item-quantity {
+    margin-top: 10px;
+}
+
+.cart-item-id {
+    font-size: 10px;
+    margin-top: 10px;
+}
+
+.cart-item-remove-button {
+    margin-top: 10px;
+}

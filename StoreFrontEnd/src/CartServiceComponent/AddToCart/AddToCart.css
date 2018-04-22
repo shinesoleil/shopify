@@ -1,0 +1,20 @@
+.add-to-cart {
+    margin-top: 40px;
+    padding: 0 40px;
+    text-align: left;
+}
+
+.add-to-cart-buttons {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.add-to-cart-quantity {
+    display: inline-block;
+    width: 20px;
+}
+
+.add-to-cart-add {
+    display: inline-block;
+    float: right;
+}
