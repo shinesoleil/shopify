@@ -1,11 +1,7 @@
 package com.tw.store.controller;//package com.tw.store.controller;
 
-import com.netflix.discovery.converters.Auto;
-import com.tw.store.domain.Cart;
 import com.tw.store.domain.CartItem;
 import com.tw.store.domain.CartItemRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;

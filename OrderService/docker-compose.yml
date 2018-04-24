@@ -1,0 +1,28 @@
+# Use root/example as user/password credentials
+version: '3.1'
+
+services:
+  spring:
+    image: springio/order-service
+    container_name: order_app
+    restart: always
+    ports:
+      - 8891:8080
+    depends_on:
+      - db
+    networks:
+      - default
+  db:
+    image: mysql
+    container_name: order_mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: order_db
+      MYSQL_USER: mysql
+      MYSQL_PASSWORD: mysql
+
+networks:
+  default:
+    external:
+      name: my-net

@@ -5,6 +5,7 @@ import CartItem from './CartItem';
 
 import axios from 'axios';
 import { map } from 'lodash';
+import PlaceOrder from '../../OrderServiceComponent/PlaceOrder/PlaceOrder';
 
 class CartItemList extends Component {
 	constructor(props) {
@@ -38,11 +39,16 @@ class CartItemList extends Component {
 	render() {
 		return (
 			<div className="cart-item-list">
+				<PlaceOrder cartItems={this.state.cartItems}/>
+
+				<div className="cart-items">
 				{
 					map(this.state.cartItems, (cartItem) => (
 						<CartItem cartItem={cartItem} key={cartItem.id} removeFromCart={() => {this.removeFromCart(cartItem.id)}}/>
 					))
 				}
+				</div>
+
 			</div>
 		);
 	}

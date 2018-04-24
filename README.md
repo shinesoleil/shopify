@@ -248,7 +248,7 @@ GET
 #### order
 
 ```java
-Class Order {
+class Order {
 	String id;
 	String name;
 	String address;
@@ -260,7 +260,7 @@ Class Order {
 
 ```mysql
 CREATE TABLE orders(
-	id varchar(100) NOT NULL,
+	id varchar(200) NOT NULL,
 	name varchar(100) NOT NULL,
 	address varchar(200) NOT NULL,
 	phone varchar(100) NOT NULL,
@@ -287,18 +287,21 @@ GET
 Class OrderItem {
 	String id;
 	String productPriceId;
+    String productName;
 	int quantity;
 	double amount;
+    Order order;
 }
 ```
 
 ```mysql
 CREATE TABLE order_items(
-	id varchar(100) NOT NULL,
+	id varchar(200) NOT NULL,
 	quantity INTEGER NOT NULL,
 	amount DOUBLE NOT NULL,
 	order_id varchar(100) NOT NULL,
 	product_price_id varchar(100) NOT NULL,
+    product_name     varchar(100) NOT NULL,
 	PRIMARY KEY (id),
 	FOREIGN KEY(order_id) REFERENCES orders(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

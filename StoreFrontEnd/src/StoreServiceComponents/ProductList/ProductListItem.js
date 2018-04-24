@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './ProductListItem.css';
 
@@ -19,7 +19,7 @@ class ProductListItem extends Component {
 	}
 
 	componentDidMount() {
-		axios.get('http://localhost:1337/spring.priceservicejersey.docker.localhost/products/' + this.props.product.id + '/current-price')
+		axios.get('http://localhost:1337/spring.priceservice.docker.localhost/products/' + this.props.product.id + '/current-price')
 			.then(res => {
 					this.setState({ price: res.data });
 				},
@@ -32,10 +32,9 @@ class ProductListItem extends Component {
 		return (
 			<div className="product-list-item">
 				<div className="product-name">
-					{/*<Link to={"/stores/" + this.props.store.id}*/}
-					{/*style={{ textDecoration: 'none' }}>*/}
-					{upperCase(this.props.product.name)}
-					{/*</Link>*/}
+					<Link to={'/stores/' + this.props.product.storeId + '/products/' + this.props.product.id}>
+						{upperCase(this.props.product.name)}
+					</Link>
 				</div>
 				<div className="product-price">price: {this.state.price.unitPrice}</div>
 				<AddToCart productId={this.props.product.id}/>

@@ -26,6 +26,7 @@ class ProductList extends Component {
 	render() {
 		return (
 			<div className="product-list">
+
 				{
 					map(this.state.products, (product) => (
 						<ProductListItem product={product} key={product.id}/>

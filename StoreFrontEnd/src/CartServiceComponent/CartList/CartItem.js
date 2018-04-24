@@ -22,7 +22,7 @@ class CartItem extends Component {
 				this.setState({ product: res.data });
 			});
 
-		axios.get('http://localhost:1337/spring.priceservicejersey.docker.localhost/products/' + this.props.cartItem.productId + '/current-price')
+		axios.get('http://localhost:1337/spring.priceservice.docker.localhost/products/' + this.props.cartItem.productId + '/current-price')
 			.then(res => {
 				this.setState({ price: res.data.unitPrice });
 			});
